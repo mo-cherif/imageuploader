@@ -1,7 +1,24 @@
+import image from "../assets/image.svg";
+
 const UploadCard = () => {
   return (
-    <div>
-      <h1>🎉 I'm the uploaded Card</h1>
+    <div className="h-screen font-poppins flex justify-center items-center">
+      <main className="bg-white shadow-3xl rounded-[12px]">
+        <div className="p-8 flex flex-col gap-3 justify-center items-center">
+          <h1 className="font-medium">Upload your image</h1>
+          <h2>File should be Jpeng, Jpg, ...</h2>
+          <div className="bg-[#F6F8FB] flex justify-center items-center flex-col gap-10 border w-[338px] h-[219px] rounded-[12px] border-dashed border-[#97BEF4]">
+            <img src={image} alt="Image" />
+            <h3 className="text-[12px] text-[#BDBDBD]">
+              Drag & Drop your image here
+            </h3>
+          </div>
+          <p>Or</p>
+          <button className="bg-[#2F80ED] text-[12px]  rounded-[8px] text-center tracking-[-0.42px] text-white w-[101px] h-[31.984px]">
+            Choose a file
+          </button>
+        </div>
+      </main>
     </div>
   );
 };
