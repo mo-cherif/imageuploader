@@ -1,12 +1,8 @@
-import image from "@/images/image.svg";
-import Image from "next/image";
-import { Poppins } from "next/font/google";
+"use client";
 
-const poppins = Poppins({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import image from "@/images/image.svg";
+import { poppins } from "@/utils/fonts";
+import Image from "next/image";
 
 const ImageUploadCard = () => {
   return (
