@@ -1,5 +1,5 @@
 "use client";
-
+import Loading from "./Loading";
 import photoIcon from "@/images/image.svg";
 import { poppins } from "@/utils/fonts";
 import Image from "next/image";
@@ -63,7 +63,7 @@ const ImageUploadCard = () => {
           </main>
         </div>
       ) : (
-        <h1>Loading</h1>
+        <Loading />
       )}
     </main>
   );
