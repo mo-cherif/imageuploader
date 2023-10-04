@@ -6,7 +6,7 @@ export const handleDragOver = (e) => {
   e.preventDefault();
 };
 
-export const handleDrop = (e, setImage, setBorder, setLoading) => {
+export const handleDrop = (e, setImage, setLoading) => {
   e.preventDefault();
   const file = e.dataTransfer.files[0];
 
@@ -16,7 +16,6 @@ export const handleDrop = (e, setImage, setBorder, setLoading) => {
       const reader = new FileReader();
       reader.onload = (e) => {
         setImage(e.target.result);
-        setBorder(false);
         setLoading(true);
       };
 
