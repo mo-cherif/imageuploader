@@ -1,5 +1,4 @@
-import ImageUploadCard from "@/components/ImageUploadCard";
-
+import ImageUploadCard from "../components/ImageUploadCard";
 export default function Home() {
   return (
     <main>

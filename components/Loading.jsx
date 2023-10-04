@@ -1,4 +1,4 @@
-import { poppins } from "@/utils/fonts";
+import { poppins } from "../utils/fonts";
 
 const Loading = () => {
   return (

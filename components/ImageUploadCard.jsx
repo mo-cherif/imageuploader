@@ -1,19 +1,20 @@
 "use client";
 import Loading from "./Loading";
-import photoIcon from "@/images/image.svg";
-import { poppins } from "@/utils/fonts";
+import photoIcon from "../images/image.svg";
+import { poppins } from "../utils/fonts";
 import Image from "next/image";
 import { useState } from "react";
 import {
   handleDrop,
   handleDragEnter,
   handleDragOver,
-} from "@/utils/dragAndDrop";
+} from "../utils/dragAndDrop";
 import Uploaded from "./Uploaded";
 
 const ImageUploadCard = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [photoName, setPhotoName] = useState("");
 
   return (
     <main>
@@ -29,11 +30,13 @@ const ImageUploadCard = () => {
                 <div
                   onDragEnter={(e) => handleDragEnter(e)}
                   onDragOver={(e) => handleDragOver(e)}
-                  onDrop={(e) => handleDrop(e, setImage, setLoading)}
-                  className="bg-[#F6F8FB] flex justify-center items-center flex-col gap-10 border w-[280px] h-[180px] rounded-[12px] border-dashed border-[#97BEF4]"
+                  onDrop={(e) =>
+                    handleDrop(e, setImage, setLoading, setPhotoName)
+                  }
+                  className="bg-[#F6F8FB] flex justify-center items-center flex-col gap-10 border w-[280px] h-[180px] rounded-[14px] border-dashed border-[#97BEF4]"
                 >
                   <div className="flex justify-center items-center flex-col gap-10">
-                    <Image src={photoIcon} alt="default image" />
+                    <Image src={photoIcon} priority alt="default image" />
                     <h3 className="text-[12px] text-[#BDBDBD]">
                       Drag & Drop your image here
                     </h3>
@@ -45,7 +48,7 @@ const ImageUploadCard = () => {
                 </button>
               </div>
             ) : (
-              <Uploaded icon={image} />
+              <Uploaded icon={image} photoName={photoName} />
             )}
           </main>
         </div>

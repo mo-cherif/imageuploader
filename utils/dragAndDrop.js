@@ -6,11 +6,12 @@ export const handleDragOver = (e) => {
   e.preventDefault();
 };
 
-export const handleDrop = (e, setImage, setLoading) => {
+export const handleDrop = (e, setImage, setLoading, setPhotoName) => {
   e.preventDefault();
   const file = e.dataTransfer.files[0];
 
   if (file && file.type.startsWith("image/")) {
+    setPhotoName(`htpp://imageupload/${file.name}`);
     setLoading(false);
     setTimeout(() => {
       const reader = new FileReader();
