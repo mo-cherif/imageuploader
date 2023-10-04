@@ -19,3 +19,27 @@ body {
   box-sizing: border-box;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+.load {
+  animation-name: goandcome;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes goandcome {
+  0% {
+    left: 0rem;
+  }
+
+  50% {
+    left: 6rem;
+  }
+
+  75% {
+    left: 10rem;
+  }
+
+  100% {
+    left: 14rem;
+  }
+}
