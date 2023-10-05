@@ -7,7 +7,7 @@ const Uploaded = ({ icon, photoName }) => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(photoName);
-    alert("Copied the text: " + photoName);
+    alert("Link Copied! 📝");
   };
 
   return (

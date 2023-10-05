@@ -20,7 +20,7 @@ const ImageUploadCard = () => {
     <main>
       {loading ? (
         <div
-          className={`${poppins.className} h-screen flex justify-center items-center`}
+          className={`${poppins.className} h-screen flex flex-col justify-center items-center`}
         >
           <main className="bg-white shadow-3xl rounded-[10px]">
             {!image ? (
@@ -51,10 +51,16 @@ const ImageUploadCard = () => {
               <Uploaded icon={image} photoName={photoName} />
             )}
           </main>
+          <footer className="mt-8 text-[#A9A9A9] text-sm">
+            Created By Mohamed CHERIF-devChallenges.io
+          </footer>
         </div>
       ) : (
         <div>
           <Loading />
+          <footer className="mt-8 text-[#A9A9A9] text-sm">
+            Created By Mohamed CHERIF-devChallenges.io
+          </footer>
         </div>
       )}
     </main>
