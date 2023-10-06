@@ -9,7 +9,7 @@ import {
   handleDragEnter,
   handleDragOver,
   handleFileChange,
-} from "../utils/dragAndDrop";
+} from "../utils/handlers";
 import Uploaded from "./Uploaded";
 
 const ImageUploadCard = () => {
