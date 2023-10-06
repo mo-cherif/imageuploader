@@ -8,6 +8,7 @@ import {
   handleDrop,
   handleDragEnter,
   handleDragOver,
+  handleFileChange,
 } from "../utils/dragAndDrop";
 import Uploaded from "./Uploaded";
 
@@ -15,8 +16,6 @@ const ImageUploadCard = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [photoName, setPhotoName] = useState("");
-
-  const selectFile = () => {};
 
   return (
     <main>
@@ -46,10 +45,17 @@ const ImageUploadCard = () => {
                 </div>
                 <p className="text-[#BDBDBD] text-[12px]">Or</p>
 
-                <input className="hidden" type="file" id="file-input" />
+                <input
+                  onChange={(e) =>
+                    handleFileChange(e, setImage, setLoading, setPhotoName)
+                  }
+                  className="hidden"
+                  type="file"
+                  id="file-input"
+                />
                 <label
                   className="bg-[#2F80ED] text-[12px] flex items-center justify-center cursor-pointer  rounded-[8px] text-center tracking-[-0.42px] text-white w-[101px] h-[31.984px]"
-                  for="file-input"
+                  htmlFor="file-input"
                 >
                   Choose a File
                 </label>

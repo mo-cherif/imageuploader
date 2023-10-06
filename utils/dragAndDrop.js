@@ -26,6 +26,7 @@ export const handleDrop = async (e, setImage, setLoading, setPhotoName) => {
     setPhotoName(data.secure_url);
 
     const reader = new FileReader();
+
     reader.onload = (e) => {
       setImage(e.target.result);
       setLoading(true);
@@ -33,5 +34,37 @@ export const handleDrop = async (e, setImage, setLoading, setPhotoName) => {
     reader.readAsDataURL(file);
   } else {
     alert("Please drop an image file.");
+  }
+};
+
+export const handleFileChange = async (
+  e,
+  setImage,
+  setLoading,
+  setPhotoName
+) => {
+  const file = e.target.files[0];
+  setLoading(false);
+
+  if (file) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "image_uploader");
+
+    const data = await fetch(
+      `https://api.cloudinary.com/v1_1/dnlqnina8/image/upload`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((res) => res.json());
+    setPhotoName(data.secure_url);
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setImage(e.target.result);
+      setLoading(true);
+    };
+    reader.readAsDataURL(file);
   }
 };
