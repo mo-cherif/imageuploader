@@ -36,7 +36,8 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+<img width="527" alt="Screenshot 2023-10-06 195538" src="https://github.com/mo-cherif/imageuploader/assets/93840180/d0aadf71-35eb-46a3-8f14-4d0875a638db">
+
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
