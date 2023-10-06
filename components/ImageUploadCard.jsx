@@ -16,6 +16,8 @@ const ImageUploadCard = () => {
   const [loading, setLoading] = useState(true);
   const [photoName, setPhotoName] = useState("");
 
+  const selectFile = () => {};
+
   return (
     <main>
       {loading ? (
@@ -43,9 +45,14 @@ const ImageUploadCard = () => {
                   </div>
                 </div>
                 <p className="text-[#BDBDBD] text-[12px]">Or</p>
-                <button className="bg-[#2F80ED] text-[12px]  rounded-[8px] text-center tracking-[-0.42px] text-white w-[101px] h-[31.984px]">
-                  Choose a file
-                </button>
+
+                <input className="hidden" type="file" id="file-input" />
+                <label
+                  className="bg-[#2F80ED] text-[12px] flex items-center justify-center cursor-pointer  rounded-[8px] text-center tracking-[-0.42px] text-white w-[101px] h-[31.984px]"
+                  for="file-input"
+                >
+                  Choose a File
+                </label>
               </div>
             ) : (
               <Uploaded icon={image} photoName={photoName} />
